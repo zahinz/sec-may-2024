@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- internal CSS -->
+    <style>
+      /* THIS IS CSS */
+
+      /* class selector, starts by dot (.) */
+      .box {
+        background-color: blue;
+      }
+
+      /* id selector, starts by hashtag (#) */
+      #box {
+        background-color: green;
+      }
+
+      /* element selector */
+      h2 {
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- this is a comment, ctrl + /, cmd + / -->
+    <!-- inline CSS -->
+    <div style="background-color: red">
+      <h1>1</h1>
+    </div>
+    <!-- internal css, written in the head -->
+    <div class="box">
+      <h1>2 class selector</h1>
+    </div>
+    <div id="box">
+      <h1>3 id selector</h1>
+    </div>
+    <div>
+      <h2>hello</h2>
+      <h2>world</h2>
+    </div>
+
+    <!-- internal vs inline -->
+    <div style="background-color: red" class="box">
+      <h1>Internal vs Inline, blue or red</h1>
+    </div>
+  </body>
+</html>
