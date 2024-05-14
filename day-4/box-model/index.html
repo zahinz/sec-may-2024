@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #parent > div {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+      }
+      #parent2 > span {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+      }
+
+      #span1 {
+        padding: 20px;
+      }
+
+      #span2 {
+        width: 100px;
+        margin: 60px;
+        padding: 20px;
+      }
+
+      #span3 {
+        width: 100px;
+        padding: 20px;
+      }
+
+      #parent3 > span {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+      }
+
+      #span4 {
+        padding-top: 100px;
+        padding-left: 30px;
+        margin-right: 40px;
+      }
+
+      /* shorthand */
+
+      /* y axis, x axis */
+      #span5 {
+        padding: 70px 20px;
+        margin: 80px 10px;
+      }
+
+      /* top, x axis, bottom */
+      #span6 {
+        padding: 100px 30px 70px;
+        margin: 100px 30px 70px;
+      }
+
+      /* clockwise */
+      #span7 {
+        padding: 100px 30px 60px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box model 1</h1>
+    <div id="parent">
+      <div id="box1">1</div>
+      <div id="box2">2</div>
+      <div id="box3">3</div>
+    </div>
+    <h1>Box model 2</h1>
+    <div id="parent2">
+      <span id="span1">hello</span>
+      <span id="span2">world</span>
+      <span id="span3">technology</span>
+    </div>
+    <h1>Box model 3</h1>
+    <div id="parent3">
+      <span id="span4">hello</span>
+      <span id="span5">world</span>
+      <span id="span6">technology</span>
+      <span id="span7">foobar</span>
+    </div>
+  </body>
+</html>

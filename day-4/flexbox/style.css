@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  background-color: #f5f5f5;
+}
+
+.parent {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+
+  /* Flexbox properties must be written at the parent */
+  /* 4 properties in flexbox */
+  display: flex; /* flexbox container */
+  flex-direction: row;
+  justify-content: center; /*determine how the children are aligned in the main axis */
+  align-items: center; /* determine how the children are aligned in the cross axis */
+
+  /* optional property */
+  gap: 20px; /* gap between children */
+  flex-wrap: wrap;
+}
+
+.child {
+  background-color: red;
+  color: white;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: 100px;
+  height: 100px;
+}
