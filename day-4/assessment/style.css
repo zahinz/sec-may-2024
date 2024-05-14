@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+#hero {
+  height: 600px;
+  background-image: url("./assets/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#hero > #nav {
+  max-width: 1000px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellow; */
+  margin: 0 auto;
+}
+
+#hero > #nav > nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+}
+
+#hero > #nav > nav > h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#hero > #nav > nav > div > a {
+  all: unset;
+  padding: 10px;
+  font-weight: bold;
+}
+
+button#login {
+  color: white;
+  font-weight: bold;
+}
+
+button#register {
+  color: white;
+  font-weight: bold;
+  background-color: #23a6f0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 20px;
+}
+
+#hero > .text {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+#hero > .text > h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 100px;
+  width: 60%;
+}
+
+#hero > .text > p {
+  font-size: 18px;
+  width: 50%;
+  line-height: 1.5;
+}
+
+button#quote {
+  color: white;
+
+  background-color: #23a6f0;
+  border-radius: 100px;
+  padding: 10px 20px;
+}
+
+button#learn {
+  color: #23a6f0;
+  border-color: #23a6f0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 100px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
