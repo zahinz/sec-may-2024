@@ -1,0 +1,94 @@
+/* COMMON STYLING PROPERTIES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f4f4f4;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a,
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+button {
+  background-color: #8eadd5;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+}
+
+/* SECTION SPECIFIC PROPERTIES */
+
+section#hero {
+  height: auto;
+  padding-bottom: 48px;
+}
+
+section#hero > nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+section#hero > nav > h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+section#hero > nav > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  color: #272d38;
+}
+
+section#hero > div {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+section#hero > div > div {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 24px;
+}
+
+section#hero > div > img {
+  height: 120%;
+}
+
+section#hero > div > div > h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #272d38;
+  line-height: 1;
+}
+
+section#hero > div > div > p {
+  font-size: 16px;
+  color: #272d38;
+  line-height: 1.5;
+}
