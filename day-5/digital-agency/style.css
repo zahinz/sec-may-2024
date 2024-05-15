@@ -8,7 +8,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f4f4f4;
+  background-color: white;
 }
 
 section {
@@ -91,4 +91,29 @@ section#hero > div > div > p {
   font-size: 16px;
   color: #272d38;
   line-height: 1.5;
+}
+
+section#brands-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 56px 0;
+}
+
+section#brands-logo > p {
+  color: #667085;
+  font-size: 16px;
+}
+
+section#brands-logo > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  background-color: #f6f6f6;
+  padding: 32px;
+  border-radius: 8px;
 }
