@@ -58,6 +58,10 @@ section#hero > nav > div {
   color: #272d38;
 }
 
+section#hero > nav > img {
+  display: none;
+}
+
 section#hero > div {
   height: 400px;
   display: flex;
@@ -116,4 +120,51 @@ section#brands-logo > div {
   background-color: #f6f6f6;
   padding: 32px;
   border-radius: 8px;
+}
+
+/* PAGE ABOUT US */
+body#about > section#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+section#test {
+  background-color: red;
+  height: 100px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+/* windows width from 0px to 1200px */
+@media (max-width: 1200px) {
+  section {
+    padding: 0 16px;
+  }
+  section#test {
+    background-color: blue;
+  }
+
+  section#hero > nav > div {
+    display: none;
+  }
+
+  section#hero > nav > img {
+    display: block;
+  }
+
+  section#hero > div {
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+  }
+
+  section#brands-logo > div {
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 90vw;
+  }
 }
