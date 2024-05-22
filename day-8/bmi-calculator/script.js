@@ -21,5 +21,5 @@
 // input user for weight in kilograms
 // input user for height in meters
 // calculate BMI based on user input (weight and height) when user click the button
-// display BMI at h2 with id="bmiValue"
-// display BMI category at h2 with id="bmiCategory"
+// display BMI at h2 with id="bmiValue" by execute the calculation when user click the button
+// display BMI category at h2 with id="bmiCategory" by using if else statement

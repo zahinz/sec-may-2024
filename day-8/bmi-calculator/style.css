@@ -51,6 +51,10 @@ input {
   color: white;
 }
 
+label {
+  color: white;
+}
+
 #bmiForm,
 #result {
   display: flex;
