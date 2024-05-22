@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background: linear-gradient(to top right, rgb(56, 68, 135), rgb(79, 94, 187));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > * {
+  margin: 1rem auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 1px black;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 1px black;
+  text-align: center;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+#bmiForm,
+#result {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+  gap: 20px;
+  padding: 20px;
+}
