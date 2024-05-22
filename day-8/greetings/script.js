@@ -1,5 +1,4 @@
 // IMPORTANT: Assignment of elements to variables must be done initially
-
 const text = document.querySelector("#text");
 const nameInput = document.querySelector("#nameInput");
 const submitName = document.querySelector("#submitName");
