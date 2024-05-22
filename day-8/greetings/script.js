@@ -18,7 +18,7 @@ nameInput.addEventListener("input", function (e) {
 submitName.addEventListener("click", function () {
   console.log("Button clicked");
   const name = nameInput.value;
-  text.innerText = "Hello " + name;
+  text.innerText = "Hello " + name + "!";
 });
 
 /*****************************************/
