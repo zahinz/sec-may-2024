@@ -13,8 +13,15 @@ nameInput.addEventListener("input", function (e) {
   console.log(e.target.value);
 });
 
+// difference between input and oninput
+function checkInput(e) {
+  console.log(e.target.value);
+}
+
 // 2. add event listener to the button
-submitName.addEventListener("click", function () {
+submitName.addEventListener("click", function (e) {
+  // e is the event object which contains information about the event
+  console.log(e);
   console.log("Button clicked");
   const name = nameInput.value;
   text.innerText = "Hello " + name + "!";
