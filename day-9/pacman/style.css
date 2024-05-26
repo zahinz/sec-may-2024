@@ -20,7 +20,7 @@ main {
 }
 
 #pacman {
-  /* filter black color using blend multiply; */
+  /* filter white color using blend multiply; */
   filter: invert(1);
   mix-blend-mode: multiply;
   width: 100px;
