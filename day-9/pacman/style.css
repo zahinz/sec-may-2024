@@ -24,6 +24,8 @@ main {
   filter: invert(1);
   mix-blend-mode: multiply;
   width: 100px;
+  transform: rotate(0deg) scaleX(1);
+  transition: all 0.1s;
 }
 
 #gameField {
