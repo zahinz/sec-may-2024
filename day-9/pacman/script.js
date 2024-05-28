@@ -5,27 +5,75 @@
 // left - transform: rotate(0deg) scaleX(-1);
 
 const pacman = document.querySelector("#pacman");
+const btnUp = document.querySelector("#up");
+const btnDown = document.querySelector("#down");
+const btnLeft = document.querySelector("#left");
+const btnRight = document.querySelector("#right");
+
+function moveRight() {
+  console.log("Right");
+  //   assing pacman styling
+  pacman.style.transform = "rotate(0deg) scaleX(1)";
+  const currentLeft = parseInt(pacman.style.left || 0);
+  const newLeft = currentLeft + 50;
+  pacman.style.left = newLeft + "px";
+}
+
+function moveLeft() {
+  console.log("Left");
+  //   assing pacman styling
+  pacman.style.transform = "rotate(0deg) scaleX(-1)";
+  const currentLeft = parseInt(pacman.style.left || 0);
+  const newLeft = currentLeft - 50;
+  if (newLeft >= 0) {
+    pacman.style.left = newLeft + "px";
+  } else {
+    pacman.style.left = 0 + "px";
+  }
+}
+
+function moveUp() {
+  console.log("Up");
+  //   assing pacman styling
+  pacman.style.transform = "rotate(-90deg) scaleX(1)";
+  const currentTop = parseInt(pacman.style.top || 0);
+  const newTop = currentTop - 50;
+  if (newTop >= 0) {
+    pacman.style.top = newTop + "px";
+  } else {
+    pacman.style.top = 0 + "px";
+  }
+}
+
+function moveDown() {
+  console.log("Down");
+  //   assing pacman styling
+  pacman.style.transform = "rotate(90deg) scaleX(1)";
+  const currentTop = parseInt(pacman.style.top || 0);
+  const newTop = currentTop + 50;
+  pacman.style.top = newTop + "px";
+}
 
 // detect keypress
 document.addEventListener("keydown", function (event) {
   if (event.key === "ArrowRight") {
-    console.log("Right");
-    //   assing pacman styling
-    pacman.style.transform = "rotate(0deg) scaleX(1)";
+    moveRight();
   } else if (event.key === "ArrowLeft") {
-    console.log("Left");
-    //   assing pacman styling
-    pacman.style.transform = "rotate(0deg) scaleX(-1)";
+    moveLeft();
   } else if (event.key === "ArrowUp") {
-    console.log("Up");
-    //   assing pacman styling
-    pacman.style.transform = "rotate(-90deg) scaleX(1)";
+    moveUp();
   } else if (event.key === "ArrowDown") {
-    console.log("Down");
-    //   assing pacman styling
-    pacman.style.transform = "rotate(90deg) scaleX(1)";
+    moveDown();
   }
 });
+
+// assign action to the button
+btnRight.addEventListener("click", function () {
+  moveRight();
+});
+btnLeft.addEventListener("click", moveLeft);
+btnUp.addEventListener("click", moveUp);
+btnDown.addEventListener("click", moveDown);
 
 // assignment for pacman
 // 1. assign action to the button to execute the pacman movement similar to the keypress
