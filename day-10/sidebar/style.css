@@ -77,15 +77,25 @@ i#menuIcon {
   display: none;
 }
 
+div#sidebarBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 div#sidebar {
-  display: none;
+  /* display: none; */
   background-color: yellow;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -200px;
   width: 200px;
   height: 100vh;
   padding: 16px;
+  transition: all 0.2s;
 }
 
 div#sidebar > div {
