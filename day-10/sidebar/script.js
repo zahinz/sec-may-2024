@@ -1,3 +1,4 @@
+// assign dom elements to variables
 const btnMenu = document.querySelector("#menuIcon");
 const btnClose = document.querySelector("#closeIcon");
 const sidebar = document.querySelector("#sidebar");
