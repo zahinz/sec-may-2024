@@ -15,16 +15,74 @@ console.log("javascript loaded");
 // get even number from 0 to 100
 for (let i = 0; i < 100; i++) {
   if (i % 2 === 0) {
-    console.log(i);
+    // console.log(i);
   }
 }
 
-// fizzbuzz
+// ASSESSMENT LOOP
+
+// 1. fizzbuzz (easiest)
 // if the number is divisible by 3, console log fizz
 // if the number is divisible by 5, console log buzz
 // if the number is divisible by 3 and 5, console log fizzbuzz
 // else console log the number
 // example: 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz
+for (let i = 0; i < 100; i++) {
+  // write your code here
+}
+
+// 2. straight triangle pattern (easy)
+// *
+// **
+// ***
+// ****
+// *****
+for (let i = 0; i < 100; i++) {
+  // write your code here
+}
+// console.log("*");
+// console.log("**");
+// console.log("***");
+// console.log("****");
+// console.log("*****");
+// console.log("******");
+
+// 3. reverse triangle pattern (moderate)
+// *****
+// ****
+// ***
+// **
+// *
+for (let i = 0; i < 100; i++) {
+  // write your code here
+}
+
+// console.log("*****");
+// console.log("****");
+// console.log("***");
+// console.log("**");
+// console.log("*");
+
+// 4. christmas tree pattern (hard)
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+for (let i = 0; i < 100; i++) {
+  // write your code here
+}
+
+// 5. diamond pattern (hard)
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
 for (let i = 0; i < 100; i++) {
   // write your code here
 }
