@@ -35,6 +35,7 @@ form.addEventListener("submit", async function (event) {
     .catch(function (error) {
       console.log(error);
       searchedWord.innerText = word;
+      // handle based on the error
       wordDefinition.innerText = "Word not found";
     })
     //   finally block will run no matter what resolve or reject
