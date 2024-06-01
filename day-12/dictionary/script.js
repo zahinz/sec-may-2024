@@ -19,6 +19,9 @@ form.addEventListener("submit", async function (event) {
   submitBtn.innerText = "Loading...";
   submitBtn.disabled = true;
   // template string
+  // use fetch to get the data from the API
+  // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+  // fetch returns a promise
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     .then(function (response) {
       return response.json();
