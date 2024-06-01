@@ -1,3 +1,6 @@
+// Form submission in JavaScript
+// Append new child to the parent
+
 const taskForm = document.querySelector("#taskForm");
 const tasksList = document.querySelector("#tasksList");
 
