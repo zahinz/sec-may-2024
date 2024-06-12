@@ -1,0 +1,12 @@
+{
+  "name": "core-module",
+  "version": "1.0.0",
+  "description": "continuation of core module lesson",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "author": "zahinz",
+  "license": "ISC"
+}
