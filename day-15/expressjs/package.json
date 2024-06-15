@@ -1,0 +1,12 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "my first node js by using expres js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "author": "zahinz",
+  "license": "ISC"
+}
