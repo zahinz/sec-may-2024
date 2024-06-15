@@ -8,5 +8,8 @@
     "start": "node index.js"
   },
   "author": "zahinz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
