@@ -160,4 +160,28 @@ FROM todos
 JOIN users ON todos.created_by = users.id
 WHERE users.email = 'zahin@mail.com'
 
+-- search todos with name contains 'LEARN' and case insensitive
+SELECT * 
+FROM todos
+WHERE LOWER(name) LIKE LOWER('%LEARN%');
+
+-- status data type status enum postponed, completed, inprogress
+CREATE TABLE todos (
+    id serial PRIMARY KEY,
+    name varchar(255),
+    status status_enum DEFAULT 'inprogress',
+    created_by integer REFERENCES users(id),
+    created_at timestamp DEFAULT NOW()
+);
+
+-- insert new column in todos table - trasaction status with transaction_enum type
+
+-- declare transaction enum type
+CREATE TYPE transaction_enum AS ENUM ('credit', 'debit', 'transfer', 'cashout');
+
+-- insert new column in todos table - transaction status with transaction_enum type
+ALTER TABLE todos ADD COLUMN transaction_status transaction_enum;
+
+-- declare status enum type
+CREATE TYPE status_enum AS ENUM ('postponed', 'completed', 'inprogress');
 
