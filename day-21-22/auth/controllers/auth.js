@@ -91,9 +91,6 @@ async function loginUser(req, res) {
 
     // compare the password with the hashed password in the database
     const isPasswordMatch = bcrypt.compareSync(password, dbPassword);
-    console.log(password);
-    console.log(dbPassword);
-    console.log(isPasswordMatch);
 
     if (!isPasswordMatch) {
       return res.status(401).json({ error: "Invalid email or password" });
@@ -107,10 +104,8 @@ async function loginUser(req, res) {
       username: user.username,
       email: user.email,
     };
-    const configJWT = {
-      expiresIn: "1s",
-    };
-    const token = jwt.sign(tokenData, process.env.JWT_SECRET, configJWT);
+
+    const token = jwt.sign(tokenData, process.env.JWT_SECRET);
 
     const resData = {
       message: "Login successful",
