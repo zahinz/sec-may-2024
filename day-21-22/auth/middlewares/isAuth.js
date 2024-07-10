@@ -15,7 +15,6 @@ async function isAuth(req, res, next) {
     const decoded = await jwt.verify(token, process.env.JWT_SECRET);
 
     const producedAt = new Date(decoded.iat * 1000);
-    console.log("Token produced at: ", producedAt);
 
     // if token more than 1 hour old, reject
     const now = new Date();
