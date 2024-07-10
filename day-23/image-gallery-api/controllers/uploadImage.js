@@ -1,4 +1,7 @@
 import database from "../database/index.js";
+import email from "../services/email.js";
+import fs from "fs";
+import path from "path";
 
 const insertQuery = `
 INSERT INTO files (fieldname, originalname, encoding, mimetype, destination, filename, path, size)
@@ -7,6 +10,13 @@ RETURNING id, filename, path, size, created_at;
 `;
 
 async function uploadImage(req, res) {
+  const htmlPath = path.join(
+    process.cwd(),
+    "services",
+    "emailTemplate",
+    "notifyNewUpload.html"
+  );
+
   try {
     // req.file came from the multer middleware
     const file = req.file;
@@ -39,6 +49,31 @@ async function uploadImage(req, res) {
 
     const dbRes = await database.query(insertQuery, values);
     const dbData = dbRes.rows[0];
+
+    // send email to notify admin of new image upload
+
+    const htmlFile = fs.readFileSync(htmlPath, "utf8");
+    await email
+      .sendMail({
+        from: "notification@image-galley.io",
+        to: "admin@image-galley.io",
+        subject: "New Image Uploaded",
+        text: `A new image was uploaded with the following details: ${JSON.stringify(
+          dbData
+        )}`,
+        html: htmlFile
+          .replace("[[ID]]", dbData.id)
+          .replace("[[FILENAME]]", dbData.filename)
+          .replace("[[PATH]]", dbData.path)
+          .replace("[[SIZE]]", dbData.size)
+          .replace("[[CREATED_AT]]", dbData.created_at),
+      })
+      .then(() => {
+        console.log("Email sent successfully");
+      })
+      .catch((error) => {
+        console.error("Error sending email: ", error);
+      });
 
     const data = {
       message: "Image uploaded successfully",
