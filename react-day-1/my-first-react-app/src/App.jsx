@@ -1,31 +1,31 @@
-// react function component
-// one function can return only one html element
-// before return we can write javascript code
-// we can use curly braces to run javascript code in html
-function App() {
-  const name = "Zahin";
-  const age = 25;
-  const favFoods = ["Pizza", "Burger", "Pasta", "Ice Cream", "Nasi Kandar"];
-  const isAdmin = false;
+import Education from "./Education";
+import Experience from "./Experience";
 
+function App() {
+  // inline css in jsx is written in camelCase and put in an object
+  const profilePicStyle = {
+    padding: "50px",
+  };
   return (
     <div>
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to my first React app.</p>
-      </div>
-      <p>My name is {name}</p>
-      <p>Age: {age} years old</p>
-      <p>Adult: {age > 18 ? "Yes" : "No"}</p>
-      <div>
-        <h2>My favorite foods:</h2>
-        <ul>
-          {favFoods.map(function (item) {
-            return <li>{item}</li>;
-          })}
-        </ul>
-      </div>
-      <div>{isAdmin && <button>Go to dashboard</button>}</div>
+      <section>
+        <img
+          id="profile-pic"
+          src="https://avatars.githubusercontent.com/u/64232111"
+          alt="Zahin Zulkipli"
+          style={profilePicStyle}
+        />
+        <h1>Zahin Zulkipli</h1>
+        <p>
+          I am a software engineer with a passion for web development. I have
+          experience working with JavaScript, React, and Node.js. I am currently
+          seeking new opportunities to grow my skills and further my career.
+        </p>
+      </section>
+      <hr />
+      <Experience />
+      <hr />
+      <Education />
     </div>
   );
 }
