@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Full Stack Developer",
+    "company": "TechNexus",
+    "location": "Kuala Lumpur",
+    "salary": 120000,
+    "experience": "3-5 years",
+    "description": "Develop and maintain web applications using React, Node.js, and MySQL. Collaborate with cross-functional teams to deliver high-quality software solutions."
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "company": "DataInsights",
+    "location": "Penang",
+    "salary": 135000,
+    "experience": "4-6 years",
+    "description": "Analyze complex data sets to drive business decisions. Develop machine learning models and create data visualization tools using Python and R."
+  },
+  {
+    "id": 3,
+    "title": "Cloud Architect",
+    "company": "CloudMalaysia",
+    "location": "Johor Bahru",
+    "salary": 150000,
+    "experience": "5-7 years",
+    "description": "Design and implement cloud infrastructure solutions using AWS and Azure. Optimize cloud resources and ensure security compliance."
+  },
+  {
+    "id": 4,
+    "title": "DevOps Engineer",
+    "company": "AgileOps",
+    "location": "Cyberjaya, Selangor",
+    "salary": 110000,
+    "experience": "2-4 years",
+    "description": "Implement and maintain CI/CD pipelines. Manage containerized environments using Docker and Kubernetes."
+  },
+  {
+    "id": 5,
+    "title": "Machine Learning Engineer",
+    "company": "AI Innovations Malaysia",
+    "location": "Shah Alam, Selangor",
+    "salary": 140000,
+    "experience": "3-5 years",
+    "description": "Develop and deploy machine learning models. Work on natural language processing and computer vision projects."
+  },
+  {
+    "id": 6,
+    "title": "Information Security Analyst",
+    "company": "SecureNet Malaysia",
+    "location": "Putrajaya",
+    "salary": 115000,
+    "experience": "4-6 years",
+    "description": "Implement and monitor security measures to protect computer networks and systems. Conduct vulnerability assessments and risk analyses."
+  },
+  {
+    "id": 7,
+    "title": "UX/UI Designer",
+    "company": "DesignMasters",
+    "location": "Petaling Jaya, Selangor",
+    "salary": 95000,
+    "experience": "2-4 years",
+    "description": "Create user-centered designs for web and mobile applications. Conduct user research and usability testing."
+  },
+  {
+    "id": 8,
+    "title": "Backend Engineer",
+    "company": "ServerPro Malaysia",
+    "location": "Melaka",
+    "salary": 115000,
+    "experience": "3-5 years",
+    "description": "Develop and maintain server-side logic using Java and Spring Boot. Design and implement RESTful APIs and microservices."
+  },
+  {
+    "id": 9,
+    "title": "Mobile App Developer",
+    "company": "AppWizards",
+    "location": "Ipoh, Perak",
+    "salary": 105000,
+    "experience": "2-4 years",
+    "description": "Develop native and cross-platform mobile applications for iOS and Android using Swift, Kotlin, and React Native."
+  },
+  {
+    "id": 10,
+    "title": "Database Administrator",
+    "company": "DataKeepers",
+    "location": "George Town, Penang",
+    "salary": 100000,
+    "experience": "3-5 years",
+    "description": "Manage and optimize database systems including MySQL, PostgreSQL, and MongoDB. Ensure data integrity, security, and performance."
+  },
+  {
+    "id": 11,
+    "title": "Product Manager",
+    "company": "InnovateTech Malaysia",
+    "location": "Subang Jaya, Selangor",
+    "salary": 130000,
+    "experience": "5-7 years",
+    "description": "Lead product development from conception to launch. Conduct market research and work closely with engineering and design teams."
+  },
+  {
+    "id": 12,
+    "title": "Network Engineer",
+    "company": "ConnectCo",
+    "location": "Iskandar Puteri, Johor",
+    "salary": 95000,
+    "experience": "2-4 years",
+    "description": "Design, implement, and maintain computer networks. Troubleshoot network issues and ensure optimal performance."
+  },
+  {
+    "id": 13,
+    "title": "Artificial Intelligence Researcher",
+    "company": "FutureTech Malaysia",
+    "location": "Kuching, Sarawak",
+    "salary": 160000,
+    "experience": "6-8 years",
+    "description": "Conduct cutting-edge research in AI and deep learning. Develop novel algorithms and publish research papers."
+  },
+  {
+    "id": 14,
+    "title": "Quality Assurance Engineer",
+    "company": "BugBusters",
+    "location": "Kota Kinabalu, Sabah",
+    "salary": 90000,
+    "experience": "2-4 years",
+    "description": "Develop and execute test plans for software applications. Implement automated testing frameworks using Selenium and JUnit."
+  },
+  {
+    "id": 15,
+    "title": "Blockchain Developer",
+    "company": "CryptoSolutions Malaysia",
+    "location": "Kuantan, Pahang",
+    "salary": 125000,
+    "experience": "3-5 years",
+    "description": "Develop decentralized applications (dApps) using Ethereum and Hyperledger. Implement smart contracts and ensure blockchain security."
+  },
+  {
+    "id": 16,
+    "title": "Systems Analyst",
+    "company": "SysOptimize",
+    "location": "Alor Setar, Kedah",
+    "salary": 95000,
+    "experience": "3-5 years",
+    "description": "Analyze and design IT systems to meet business requirements. Conduct feasibility studies and prepare system specifications."
+  },
+  {
+    "id": 17,
+    "title": "Frontend Developer",
+    "company": "WebCrafters Malaysia",
+    "location": "Miri, Sarawak",
+    "salary": 100000,
+    "experience": "2-4 years",
+    "description": "Build responsive and interactive user interfaces using React, Vue.js, and modern CSS frameworks. Optimize web performance and accessibility."
+  },
+  {
+    "id": 18,
+    "title": "IoT Engineer",
+    "company": "SmartDevices Malaysia",
+    "location": "Seremban, Negeri Sembilan",
+    "salary": 110000,
+    "experience": "3-5 years",
+    "description": "Develop IoT solutions for smart homes and industrial applications. Work with embedded systems and implement IoT protocols."
+  },
+  {
+    "id": 19,
+    "title": "Technical Writer",
+    "company": "DocuTech Malaysia",
+    "location": "Kajang, Selangor",
+    "salary": 85000,
+    "experience": "2-4 years",
+    "description": "Create clear and concise technical documentation for software products. Develop user manuals, API documentation, and knowledge base articles."
+  },
+  {
+    "id": 20,
+    "title": "AR/VR Developer",
+    "company": "ImmersiveTech Malaysia",
+    "location": "Batu Pahat, Johor",
+    "salary": 115000,
+    "experience": "3-5 years",
+    "description": "Develop augmented and virtual reality applications using Unity and Unreal Engine. Create immersive experiences for education and entertainment sectors."
+  }
+]
