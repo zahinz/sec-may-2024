@@ -19,6 +19,9 @@ function Home() {
   function navigateToFormC() {
     navigate("/form-c");
   }
+  function navigateToFormD() {
+    navigate("/form-d");
+  }
   return (
     <div>
       <h1>Hello Home</h1>
@@ -26,6 +29,7 @@ function Home() {
         <button onClick={navigateToFormA}>Form A</button>
         <button onClick={navigateToFormB}>Form B</button>
         <button onClick={navigateToFormC}>Form C</button>
+        <button onClick={navigateToFormD}>Form D</button>
       </div>
     </div>
   );
