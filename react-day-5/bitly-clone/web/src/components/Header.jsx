@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Header() {
   const headerStyle = {
@@ -23,23 +24,35 @@ function Header() {
   function handleNavigateToHome() {
     navigate("/");
   }
+
+  function handleLogout() {
+    Cookies.remove("authToken");
+    navigate("/login");
+  }
+  const token = Cookies.get("authToken");
   return (
     <header style={headerStyle}>
       <h1 onClick={handleNavigateToHome} style={{ cursor: "pointer" }}>
         bitly clone
       </h1>
-      <div>
-        <button
-          onClick={handleNavigateToLogin}
-          className="primary"
-          style={{ marginRight: "10px" }}
-        >
-          Login
+      {token ? (
+        <button onClick={handleLogout} className="primary">
+          Logout
         </button>
-        <button onClick={handleNavigateToRegister} className="outline">
-          Register
-        </button>
-      </div>
+      ) : (
+        <div>
+          <button
+            onClick={handleNavigateToLogin}
+            className="primary"
+            style={{ marginRight: "10px" }}
+          >
+            Login
+          </button>
+          <button onClick={handleNavigateToRegister} className="outline">
+            Register
+          </button>
+        </div>
+      )}
     </header>
   );
 }
