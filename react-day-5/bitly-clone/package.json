@@ -1,0 +1,17 @@
+{
+  "name": "bitly-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:api": "cd api && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "dev": "concurrently -n api,web -c red,blue \"npm run dev:api\" \"npm run dev:web\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
