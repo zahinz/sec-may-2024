@@ -4,10 +4,12 @@ import { parseMessage } from "../../utils/helper";
 const createLink = async (req, res) => {
   try {
     const { original_link } = req.body;
+    const userId = req.user;
     const randomisedEightChar = Math.random().toString(36).substring(2, 10);
     const slug = await Slug.create({
       original_link,
       shortened_link: randomisedEightChar,
+      created_by: userId,
     });
     res.status(201).json(parseMessage("Link created", slug));
     return;
