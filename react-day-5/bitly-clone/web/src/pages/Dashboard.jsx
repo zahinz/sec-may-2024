@@ -21,8 +21,6 @@ function Dashboard() {
       setLinks(data.data);
     } catch (error) {
       console.error("Error at fetchLinks");
-      alert("You are not authorized to view this page");
-      window.location.href = "/login";
     } finally {
       setIsLoading(false);
     }
