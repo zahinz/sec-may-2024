@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
-import { getApiWithToken } from "../utils/api";
+import {
+  deleteApiWithToken,
+  getApiWithToken,
+  putApiWithToken,
+} from "../utils/api";
 import Cookies from "js-cookie";
 import Header from "../components/Header";
+import NewLinkForm from "../components/NewLinkForm";
 
 function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [links, setLinks] = useState([]);
+
   async function fetchLinks() {
     try {
       setIsLoading(true);
@@ -26,14 +32,59 @@ function Dashboard() {
     }
   }
 
+  async function deleteLink(id) {
+    if (window.confirm("Are you sure you want to delete this link?")) {
+      try {
+        const token = Cookies.get("authToken");
+        const serverRes = await deleteApiWithToken(
+          `http://localhost:3000/link/${id}`,
+          token
+        );
+        if (!serverRes.ok) {
+          alert("You are not authorized to delete this link");
+        }
+        alert("Link deleted successfully");
+        fetchLinks();
+      } catch (error) {
+        console.error(error);
+        alert("Error deleting link");
+      }
+    }
+  }
+
+  async function editLink(id) {
+    try {
+      const newOriginaalLink = prompt("Enter new original link");
+      if (!newOriginaalLink) {
+        return;
+      }
+      const token = Cookies.get("authToken");
+      const serverRes = await putApiWithToken(
+        `http://localhost:3000/link/${id}`,
+        { original_link: newOriginaalLink },
+        token
+      );
+      if (!serverRes.ok) {
+        alert("You are not authorized to edit this link");
+      }
+      alert("Link edited successfully");
+      fetchLinks();
+    } catch (error) {
+      console.error(error);
+      alert("Error editing link");
+    }
+  }
+
   useEffect(function () {
     fetchLinks();
   }, []);
+
   return (
     <div>
       <Header />
       <div style={{ padding: "2rem" }}>
-        <h1>Dashboard</h1>
+        <h1 style={{ marginBottom: "1rem" }}>Dashboard</h1>
+        <NewLinkForm onSuccess={fetchLinks} />
         {isLoading ? (
           <p>Loading...</p>
         ) : (
@@ -43,8 +94,8 @@ function Dashboard() {
                 <th>Original Link</th>
                 <th>Shortened Link</th>
                 <th>Visit Count</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -54,8 +105,14 @@ function Dashboard() {
                     <td>{link.original_link}</td>
                     <td>{link.shortened_link}</td>
                     <td>{link.visit_count}</td>
-                    <td>{link.createdAt}</td>
-                    <td>{link.updatedAt}</td>
+                    <td style={{ textAlign: "center" }}>
+                      <button onClick={() => editLink(link.id)}>Edit</button>
+                    </td>
+                    <td style={{ textAlign: "center" }}>
+                      <button onClick={() => deleteLink(link.id)}>
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
