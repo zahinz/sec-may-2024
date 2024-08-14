@@ -9,3 +9,7 @@
 3. `cd` into the project directory.
 4. `npm start` to start the app.
 5. Open the app in the Expo Go app on your phone or in a simulator.
+
+## Expo SDK Packages
+
+- `https://docs.expo.dev/versions/latest/`

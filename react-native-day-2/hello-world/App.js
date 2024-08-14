@@ -4,11 +4,18 @@ import {
   Pressable,
   SafeAreaView,
   ScrollView,
+  StyleSheet,
   Text,
+  TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
 import icon from "./assets/favicon.png";
 import qrCode from "./assets/qrcode.png";
+import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
+import { useState } from "react";
+import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
 
 // View is like a div
 // Text is like a span
@@ -31,7 +38,8 @@ const textStyle = {
 };
 
 const view2ContainerStyle = {
-  padding: 32,
+  paddingVertical: 32,
+  paddingHorizontal: 16,
   backgroundColor: "white",
   borderBottomWidth: 1,
   gap: 16,
@@ -45,8 +53,9 @@ const pressableStyle = {
 
 const pressableTextStyle = {
   color: "white",
-  fontSize: 24,
+  fontSize: 16,
   textAlign: "center",
+  fontWeight: "bold",
 };
 
 const imageStyle = {
@@ -70,10 +79,37 @@ const childrenHorizontalTextStyle = {
   fontSize: 24,
 };
 
+const TextInputStyle = {
+  padding: 16,
+  borderRadius: 8,
+  borderColor: "black",
+  borderWidth: 1,
+};
+
+const InputContainerStyle = {
+  gap: 8,
+};
+
+const webViewStyle = {
+  width: 300,
+  height: 600,
+  borderColor: "black",
+  borderWidth: 1,
+  borderRadius: 8,
+  marginRight: 16,
+};
+
 function App() {
   function onPressButton() {
     alert("Button pressed!");
   }
+
+  const [result, setResult] = useState(null);
+
+  const _handlePressButtonAsync = async () => {
+    let result = await WebBrowser.openBrowserAsync("https://reactnative.dev/");
+    setResult(result);
+  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -115,13 +151,120 @@ function App() {
         </View>
         <View style={view2ContainerStyle}>
           <Text>Input</Text>
+          <Input label="Full name" placeholder="Please insert your full name" />
+          <Input label="Email" placeholder="Please insert your email" />
+          <Input label="Password" placeholder="Please insert your password" />
+          <Pressable style={pressableStyle}>
+            <Text style={pressableTextStyle}>Submit</Text>
+          </Pressable>
         </View>
         <View style={view2ContainerStyle}>
-          <Text>Web</Text>
+          <Text>Web View</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <WebView
+              style={webViewStyle}
+              source={{ uri: "https://google.com" }}
+            />
+            <WebView
+              style={webViewStyle}
+              source={{ uri: "https://facebook.com" }}
+            />
+            <WebView
+              style={webViewStyle}
+              source={{ uri: "https://zahinzul.com" }}
+            />
+          </ScrollView>
+        </View>
+        <View style={view2ContainerStyle}>
+          <Text>Web Browser</Text>
+          <Button title="Open WebBrowser" onPress={_handlePressButtonAsync} />
+          <Text>{result && JSON.stringify(result)}</Text>
+        </View>
+        <View style={view2ContainerStyle}>
+          <Text>Camera</Text>
+          <Camera />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+
+function Input({ label, ...rest }) {
+  return (
+    <View style={InputContainerStyle}>
+      <Text>{label}</Text>
+      <TextInput style={TextInputStyle} {...rest} />
+    </View>
+  );
+}
+
+function Camera() {
+  const [facing, setFacing] = useState("back");
+  const [permission, requestPermission] = useCameraPermissions();
+
+  if (!permission) {
+    // Camera permissions are still loading.
+    return <View />;
+  }
+
+  if (!permission.granted) {
+    // Camera permissions are not granted yet.
+    return (
+      <View>
+        <Text style={styles.message}>
+          We need your permission to show the camera
+        </Text>
+        <Button onPress={requestPermission} title="grant permission" />
+      </View>
+    );
+  }
+
+  function toggleCameraFacing() {
+    setFacing((current) => (current === "back" ? "front" : "back"));
+  }
+
+  return (
+    <View>
+      <CameraView style={styles.camera} facing={facing}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+            <Text style={styles.text}>Flip Camera</Text>
+          </TouchableOpacity>
+        </View>
+      </CameraView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  message: {
+    textAlign: "center",
+    paddingBottom: 10,
+  },
+  camera: {
+    flex: 1,
+    height: 400,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white",
+  },
+});
 
 export default App;
