@@ -1,21 +1,46 @@
-import { Pressable, Text } from "react-native";
-const pressableStyle = {
+import { Pressable, Text, View } from "react-native";
+const defaultStyle = {
   padding: 10,
   backgroundColor: "blue",
-  margin: 10,
+  borderRadius: 5,
+  borderWidth: 2,
+  borderColor: "blue",
 };
 
-const pressableTextStyle = {
+const outlineVariant = {
+  backgroundColor: "transparent",
+  borderWidth: 2,
+  borderColor: "blue",
+};
+
+const defaultTextStyle = {
   color: "white",
   textAlign: "center",
   fontWeight: "bold",
 };
 
-function Button({ children, ...rest }) {
+const outlineVariantTextStyle = {
+  color: "blue",
+};
+
+function Button({ variant, children, ...rest }) {
+  const pressableStyle =
+    variant === "outline"
+      ? { ...defaultStyle, ...outlineVariant }
+      : defaultStyle;
+
+  const pressableTextStyle =
+    variant === "outline"
+      ? { ...defaultTextStyle, ...outlineVariantTextStyle }
+      : defaultTextStyle;
+
   return (
-    <Pressable {...rest} style={pressableStyle}>
-      <Text style={pressableTextStyle}>{children}</Text>
-    </Pressable>
+    <View>
+      {/* additional rest.style will superseed the component style */}
+      <Pressable {...rest} style={{ ...pressableStyle, ...rest.style }}>
+        <Text style={pressableTextStyle}>{children}</Text>
+      </Pressable>
+    </View>
   );
 }
 

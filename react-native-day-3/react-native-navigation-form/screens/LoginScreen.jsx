@@ -11,14 +11,13 @@ function LoginScreen({ navigation }) {
   function goToRegister() {
     navigation.navigate("register");
   }
-  function goBack() {
-    navigation.goBack();
-  }
+
   return (
     <View style={screenContainerStyle}>
       <Text>Login Screen</Text>
-      <Button onPress={goToRegister}>Register</Button>
-      <Button onPress={goBack}>Go Back</Button>
+      <Button variant="outline" onPress={goToRegister}>
+        New user?
+      </Button>
     </View>
   );
 }

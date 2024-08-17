@@ -20,18 +20,16 @@ function App() {
           name="login"
           component={LoginScreen}
           options={{
-            title: "Welcome back!",
-            headerStyle: { backgroundColor: "blue" },
-            headerTintColor: "white",
+            title: "Login",
+            headerShown: false,
           }}
         />
         <Stack.Screen
           name="register"
           component={RegisterScreen}
           options={{
-            title: "Create an account",
-            headerStyle: { backgroundColor: "blue" },
-            headerTintColor: "white",
+            title: "Register",
+            headerShown: false,
           }}
         />
         <Stack.Screen name="dashboard" component={DashboardScreen} />
