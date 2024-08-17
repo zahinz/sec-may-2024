@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dimensions, Text, View } from "react-native";
 import Button from "../component/Button";
 import Input from "../component/Input";
+import Typography from "../component/Typography";
 
 const screenContainerStyle = {
   flex: 1,
@@ -33,7 +34,9 @@ function RegisterScreen({ navigation }) {
   }
   return (
     <View style={screenContainerStyle}>
-      <Text>Register Screen</Text>
+      <Typography.Header style={{ marginBottom: 16 }}>
+        Register Screen
+      </Typography.Header>
       <View style={{ gap: 16, marginBottom: 16 }}>
         <Input
           placeholder="zahin@mail.com"
