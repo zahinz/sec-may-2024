@@ -9,17 +9,18 @@ const textInputStyle = {
   borderColor: "gray",
   borderWidth: 2,
   width: "100%",
-  marginTop: 4,
+  marginVertical: 4,
   borderColor: "blue",
   borderRadius: 5,
   padding: 10,
 };
 
-function Input({ label, ...rest }) {
+function Input({ label, errorMessage, ...rest }) {
   return (
     <View style={inputContainer}>
       {label && <Text>{label}</Text>}
       <TextInput {...rest} style={textInputStyle} />
+      {errorMessage && <Text style={{ color: "red" }}>{errorMessage}</Text>}
     </View>
   );
 }
